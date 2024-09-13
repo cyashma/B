@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I love you.</title>
+    <!-- Importing Merriweather font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: "Merriweather", serif;
+        color: #fff;
+        scroll-behavior: smooth;
+        background: radial-gradient(
+          circle,
+          rgba(238, 174, 202, 1) 0%,
+          rgba(148, 187, 233, 1) 100%
+        );
+        overflow-y: scroll;
+        scrollbar-width: none;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Parallax Background */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        z-index: -1;
+        background-attachment: fixed; /* Parallax effect */
+      }
+
+      /* Section Styling */
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+        font-size: 2.2em;
+        line-height: 1.5;
+        color: #ffffff;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+        z-index: 1;
+        position: relative;
+      }
+
+      /* Call-to-Action Footer */
+      footer {
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      @media screen and (max-width: 600px) {
+        section {
+          font-size: 1.6em;
+          line-height: 1.4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- First quote -->
+    <section id="quote1">
+      In your eyes, I find my favorite colors, and in your heart, I see the
+      masterpiece that is you.
+    </section>
+
+    <!-- Second quote -->
+    <section id="quote2">I love everything about you.</section>
+
+    <!-- Third quote -->
+    <section id="quote3">
+      When I'm with you, even silence speaks a thousand words.
+    </section>
+
+    <!-- Fourth quote -->
+    <section id="quote4">Your voice is my favorite sound.</section>
+
+    <!-- Fifth quote -->
+    <section id="quote5">I can't wait to have kids with you.</section>
+
+    <!-- Sixth quote -->
+    <section id="quote6">There is nothing wrong with you.</section>
+
+    <!-- Seventh quote -->
+    <section id="quote7">
+      I don’t need a perfect world, I just need one with you in it.
+    </section>
+
+    <!-- Eighth quote -->
+    <section id="quote8">I love you my perfect girl Brilynn.</section>
+
+    <!-- Call-to-Action Footer -->
+    <footer>Made for Brilynn with love.</footer>
+
+    <!-- Autoplay Song (audio element) -->
+    <audio id="background-audio" loop>
+      <source src="song.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Include particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Particle.js configuration -->
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 60,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: ["circle", "polygon"],
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+          },
+          opacity: {
+            value: 0.7,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0.3,
+              sync: false,
+            },
+          },
+          size: {
+            value: 6,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 5,
+              size_min: 0.5,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: false,
+          },
+          move: {
+            enable: true,
+            speed: 1.5,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 200,
+              line_linked: {
+                opacity: 0.5,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // Trigger audio play on user interaction (click, scroll)
+      const audio = document.getElementById("background-audio");
+      function playAudio() {
+        audio.play(); // Play the audio when user interacts
+      }
+
+      // Event listener for click or scroll to start the audio
+      window.addEventListener("click", playAudio);
+      window.addEventListener("scroll", playAudio);
+    </script>
+  </body>
+</html>
